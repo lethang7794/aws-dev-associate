@@ -16,7 +16,13 @@
 
 ## Service-linked Roles and PassRole (5:16)
 
-## [DVA-C02] AWS Security Token Service (6:53)
+## [DVA-C02] AWS Security Token Service (STS) (6:53)
+
+![Alt text](<images/Screenshot from 2023-11-04 20-55-11.png>)
+STS - Overview
+
+![Alt text](<images/Screenshot from 2023-11-04 20-55-12.png>)
+STS - How it works?
 
 ## [ASSOCIATE] AWS Organizations (12:56)
 
