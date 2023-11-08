@@ -8,4 +8,10 @@
 
 ## AWS Permissions Evaluation (10:25)
 
+![Alt text](<images/Screenshot from 2023-11-08 10-21-05.png>)
+Policy Evaluation Logic - Same Account
+
+![Alt text](<images/Screenshot from 2023-11-08 10-23-06.png>)
+Policy Evaluation Logic - Different Accounts
+
 ## CloudHSM (14:36)
