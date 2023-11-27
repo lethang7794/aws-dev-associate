@@ -1,0 +1,22 @@
+version: 0.2 # Current buildspec version
+
+phases:
+  install: # Commands run during installation 👉️ e.g. install packages for the build environment
+    runtime-versions: # https://docs.aws.amazon.com/codebuild/latest/userguide/available-runtimes.html
+      golang: 1.21
+
+  pre_build: # Commands run before the build. 👉️ e.g. install dependencies for code, login to docker registry (ECR)
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+
+  build: # Commands run during the build 👉️ e.g. Build code, build docker image
+    commands:
+      - echo Build started on `date`
+      - echo Building Go binary
+      - echo Building the Docker image...
+
+  post_build: # Commands run after the build 👉️ e.g. Push docker image
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
