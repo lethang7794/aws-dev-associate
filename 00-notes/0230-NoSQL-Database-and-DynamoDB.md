@@ -1,20 +1,20 @@
 # NoSQL Databases & DynamoDB
 
-## [ASSOCIATE] DynamoDB Architecture Basics (10:49)
+## DynamoDB Architecture Basics (10:49)
 
-## [ASSOCIATE] DynamoDB Operations, Consistency and Performance - PART1 (13:06)
+## DynamoDB Operations, Consistency and Performance - PART1 (13:06)
 
-## [ASSOCIATE] DynamoDB Operations, Consistency and Performance - PART2 (11:24)
+## DynamoDB Operations, Consistency and Performance - PART2 (11:24)
 
-## [ASSOCIATE] DynamoDB Indexes (LSI and GSI) (12:35)
+## DynamoDB Indexes (LSI and GSI) (12:35)
 
-## [ASSOCIATE] DynamoDB Streams and Triggers (9:10)
+## DynamoDB Streams and Triggers (9:10)
 
 ## [DVA-C02] [DEMO] DynamoDB Triggers using Lambda (16:54)
 
-## [ASSOCIATE] DynamoDB Accelerator (DAX) (10:58)
+## DynamoDB Accelerator (DAX) (10:58)
 
-## [ASSOCIATE] DynamoDB Global Tables (5:09)
+## DynamoDB Global Tables (5:09)
 
 ## DynamoDB Time-To-Live (TTL) (4:49)
 
