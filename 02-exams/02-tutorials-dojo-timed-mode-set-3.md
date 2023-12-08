@@ -5,8 +5,8 @@ Test time: Dec 7 2023, 9h45 - 10h28 (00:47:24)
 Score: 56/65 (86.15%)
 
 - CDA – Development with AWS Services: 85.71%
-- CDA – Security: 81.08%
-- CDA – Deployment: 100%
+- CDA – Security: 100%
+- CDA – Deployment: 81.08%
 - CDA – Troubleshooting and Optimization: 91.67%
 
 ## Domain 1: Development with AWS Services
