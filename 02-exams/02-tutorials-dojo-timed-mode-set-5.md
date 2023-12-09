@@ -70,24 +70,26 @@ Score: 47/65 (72%):
 
 ## Domain 2: Security
 
-| No  |     | Q                                                                           | A                                                                                                 | Ref |
-| --- | --- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | --- |
-|     |     |                                                                             |                                                                                                   |     |
-| 1   | ❌  | S3: Encryption each files with different keys. Cost-effective, low overhead | - SSE-S3: use the same key for all files.                                                         |     |
-|     |     |                                                                             | - SSE-C & use KMS to create CMK for each files (`CreateKey`): not cost-effective (1CMK: 1$/month) |     |
-|     |     |                                                                             | - SSE-KMS & Use KMS to generate DEK for each files (`GenerateDataKey`): 👈 THIS                   |     |
-| 2   |     |                                                                             |                                                                                                   |     |
-| 3   |     |                                                                             |                                                                                                   |     |
-| 4   |     |                                                                             |                                                                                                   |     |
-| 5   | ❌  | KMS features                                                                |                                                                                                   |     |
-| 6   |     |                                                                             |                                                                                                   |     |
-| 7   |     |                                                                             |                                                                                                   |     |
-| 8   |     |                                                                             |                                                                                                   |     |
-| 9   | ❌  |                                                                             |                                                                                                   |     |
-| 10  |     |                                                                             |                                                                                                   |     |
-| 11  |     |                                                                             |                                                                                                   |     |
-| 12  | ❌  |                                                                             |                                                                                                   |     |
-| 13  | ❌  |                                                                             |                                                                                                   |     |
+| No  |     | Q                                                                                        | A                                                                                                              | Ref                                             |
+| --- | --- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+|     |     |                                                                                          |                                                                                                                |                                                 |
+| 1   | ❌  | S3: Encryption each files with different keys. Cost-effective, low overhead              | - SSE-S3: use the same key for all files.                                                                      |                                                 |
+|     |     |                                                                                          | - SSE-C & use KMS to create CMK for each files (`CreateKey`): not cost-effective (1CMK: 1$/month)              |                                                 |
+|     |     |                                                                                          | - SSE-KMS & Use KMS to generate DEK for each files (`GenerateDataKey`): 👈 THIS                                |                                                 |
+| 2   |     |                                                                                          |                                                                                                                |                                                 |
+| 3   |     |                                                                                          |                                                                                                                |                                                 |
+| 4   |     |                                                                                          |                                                                                                                |                                                 |
+| 5   | ❌  | KMS features                                                                             |                                                                                                                |                                                 |
+| 6   |     |                                                                                          |                                                                                                                |                                                 |
+| 7   |     |                                                                                          |                                                                                                                |                                                 |
+| 8   |     |                                                                                          |                                                                                                                |                                                 |
+| 9   | ❌  | AWS CLI: `UnauthorizedOperation` error with encoded authorization message. What to do?   | Decode the message with `STS` `decode-authorization-message`                                                   | [2.9]                                           |
+| 10  |     |                                                                                          |                                                                                                                |                                                 |
+| 11  |     |                                                                                          |                                                                                                                |                                                 |
+| 12  | ❌  | Serverless app defined with Cloud Development Kit (CDK). How to test local?              | 1. (From CDK template) "Synthesize" & output Cfn template with `cdk synth`                                     | [2.12 What is CDK?] [2.12 CDK toolkit commands] |
+|     |     |                                                                                          | 2. Invoke the Lambda function locally with `sam invoke local` (by emulating the Lambda execution environment.) | [2.12 `sam local invoke`]                       |
+| 13  | ❌  | Cognito Identity Pools: What does Cognito returns to authenticated/unauthenticated user? | - For authenticated users: Cognito returns the `token`                                                         |                                                 |
+|     |     |                                                                                          | - For unauthenticated users: Cognito returns a `Cognito ID`                                                    |                                                 |
 
 ### 2.5 KMS features
 
@@ -103,27 +105,44 @@ Not a KMS features:
 - Import asymmetric keys
 - Rotate key in custom stores
 
+[2.9]: https://docs.aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html
+[2.12 What is CDK?]: https://docs.aws.amazon.com/cdk/v2/guide/home.html
+[2.12 CDK toolkit commands]: https://docs.aws.amazon.com/cdk/v2/guide/cli.html#cli-commands
+[2.12 `sam local invoke`]: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-local-invoke.html
+
 ## Domain 3: Deployment
 
-| No  |     | Q                                                                                        | A                                                                                                              | Ref                                           |
-| --- | --- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-|     |     |                                                                                          |                                                                                                                |                                               |
-| 1   |     |                                                                                          |                                                                                                                |                                               |
-| 2   | ❌  | AWS CLI: `UnauthorizedOperation` error with encoded authorization message. What to do?   | Decode the message with `STS` `decode-authorization-message`                                                   | [3.2]                                         |
-| 3   |     |                                                                                          |                                                                                                                |                                               |
-| 4   |     |                                                                                          |                                                                                                                |                                               |
-| 5   |     |                                                                                          |                                                                                                                |                                               |
-| 6   |     |                                                                                          |                                                                                                                |                                               |
-| 7   | ❌  | Serverless app defined with Cloud Development Kit (CDK). How to test local?              | 1. (From CDK template) "Synthesize" & output Cfn template with `cdk synth`                                     | [3.7 What is CDK?] [3.7 CDK toolkit commands] |
-|     |     |                                                                                          | 2. Invoke the Lambda function locally with `sam invoke local` (by emulating the Lambda execution environment.) | [3.7 `sam local invoke`]                      |
-| 8   |     |                                                                                          |                                                                                                                |                                               |
-| 9   | ❌  | Cognito Identity Pools: What does Cognito returns to authenticated/unauthenticated user? | - For authenticated users: Cognito returns the `token`                                                         |                                               |
-|     |     |                                                                                          | - For unauthenticated users: Cognito returns a `Cognito ID`                                                    |                                               |
+| No  |     | Q                                        | A                                                                                                                                                      | Ref   |
+| --- | --- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+|     |     |                                          |                                                                                                                                                        |       |
+| 1   |     |                                          |                                                                                                                                                        |       |
+| 2   | ❌  | CodeDeploy: Rollback                     | CodeDeploy rolls back deployments by **redeploying** a previously deployed revision of an application **as a new deployment** (with new deployment ID) | [3.2] |
+| 3   |     |                                          |                                                                                                                                                        |       |
+| 4   |     |                                          |                                                                                                                                                        |       |
+| 5   |     |                                          |                                                                                                                                                        |       |
+| 6   |     |                                          |                                                                                                                                                        |       |
+| 7   | ❌  | CodeCommit: How to setup for a new user? | Use AWS credential (with `credential-helper`)                                                                                                          | [3.7] |
+| 8   |     |                                          |                                                                                                                                                        |       |
+| 9   | ❌  | SAM: How to deploy (& test)?             | 1. (Once time) `sam init`                                                                                                                              |       |
+|     |     |                                          | 2. `sam deploy`                                                                                                                                        |       |
 
-[3.2]: https://docs.aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html
-[3.7 What is CDK?]: https://docs.aws.amazon.com/cdk/v2/guide/home.html
-[3.7 CDK toolkit commands]: https://docs.aws.amazon.com/cdk/v2/guide/cli.html#cli-commands
-[3.7 `sam local invoke`]: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-local-invoke.html
+[3.2]: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployments-rollback-and-redeploy.html
+
+### 3.7 CodeCommit: Setup for new user
+
+- HTTPs Git credential (use username & password)
+
+- SSH connections (use public-private key pair)
+
+  - Create public & private key pair on your local machine
+  - Associate the public key with IAM user
+
+- Use AWS credential (profile)
+
+  1. Use `git-remote-commit` (recommended)
+  2. Use `aws codecommit` `credential-helper`
+
+[3.7]: https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up.html
 
 ## Domain 4: Troubleshooting and Optimization
 
