@@ -9,7 +9,7 @@
 | 5   | Tutorials Dojo - Time Mode Set 4               | 60/65 | 92.3%         | Passed | 50m       | Dec 8, 2023 (10:00 - 10:50)  |
 | 6   | Tutorials Dojo - Time Mode Set 5               | 47/65 | 72%           | Passed | 1h        | Dec 9, 2023 (14:30 - 15h30)  |
 | 2   | Tutorials Dojo - Time Mode Set 1 - 2nd attempt | 63/65 | 96.92%        | Passed | 1h        | Dec 10, 2023 (16:20 - 17:20) |
-| 7   | Tutorials Dojo Final Test                      |       |               |        |           | Dec 10, 2023                 |
+| 7   | Tutorials Dojo - Final Test                    | 63/65 | 96.92%        | Passed | 35m       | Dec 10, 2023 (19:30 - 20:05) |
 | 8   | REAL AWS EXAM                                  |       |               |        |           | Dec 11, 2023                 |
 
 [1]: https://learn.cantrill.io/courses/aws-certified-developer-associate/lectures/29929749

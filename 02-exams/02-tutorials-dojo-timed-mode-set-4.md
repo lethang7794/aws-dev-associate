@@ -109,7 +109,7 @@ Score: 60/65 (92.3%):
 | No  |     | Q                                                                                          | A                                                                              | Ref   |
 | --- | --- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ----- |
 |     |     |                                                                                            |                                                                                |       |
-| 1   | ❌  | SAM deploy process (From local machine)                                                    | 1. Build (local); 2. Package ("Publish" to S3); 3. Deploy (Use artifact on S3) |       |
+| 1   | ❌  | SAM deploy process (From local machine)                                                    | 1. Build (local); ~~2. Package ("Publish" to S3)~~; 3. Deploy (Use artifact on S3) |       |
 | 2   | ✅  | Elastic Beanstalk: HA, revert quickly?                                                     | 1. Use any EB deployment strategy, e.g. All-at-once (fastest)                  |       |
 |     |     |                                                                                            | 2. Blue-Green deployment (EB calls it swap environment URLs)                   | [3.2] |
 | 3   | ✅  | CloudFormation: Inline code in template                                                    | `AWS::Lambda::Function` / `Code` / `ZipFile`                                   |       |
