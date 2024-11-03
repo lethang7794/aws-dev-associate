@@ -1,0 +1,41 @@
+[book]
+authors      = [ "Le Quang Thang" ]
+language     = "en"
+multilingual = false
+src          = "src"
+title        = "Notes for AWS Solution Architect Associate (Cantrill course)"
+
+[build]
+build-dir      = "book"
+# create-missing = false
+
+[preprocessor.callouts]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[preprocessor.pagetoc]
+
+[preprocessor.yml-header]
+
+[output.html]
+additional-css       = [ "theme/css/catppuccin.css", "theme/pagetoc.css" ]
+default-theme        = "latte"
+preferred-dark-theme = "macchiato"
+
+smart-punctuation = true
+
+site-url           = "/aws-sa-associate-saac03/"
+git-repository-url = "https://github.com/lethang7794/aws-sa-associate-saac03"
+edit-url-template  = "https://github.com/lethang7794/aws-sa-associate-saac03/edit/master{path}"
+
+additional-js = [
+  "theme/mermaid/mermaid.min.js",
+  "theme/mermaid/mermaid-init.js",
+  "theme/pagetoc.js",
+]
+
+# Fold chapter listing in the navigation sidebar
+[output.html.fold]
+enable = true
+level  = 0
