@@ -3,7 +3,7 @@ authors      = [ "Le Quang Thang" ]
 language     = "en"
 multilingual = false
 src          = "src"
-title        = "Notes for AWS Solution Architect Associate (Cantrill course)"
+title        = "Notes for AWS Developer Associate (Cantrill course)"
 
 [build]
 build-dir      = "book"
@@ -25,9 +25,9 @@ preferred-dark-theme = "macchiato"
 
 smart-punctuation = true
 
-site-url           = "/aws-sa-associate-saac03/"
-git-repository-url = "https://github.com/lethang7794/aws-sa-associate-saac03"
-edit-url-template  = "https://github.com/lethang7794/aws-sa-associate-saac03/edit/master{path}"
+site-url           = "/aws-dev-associate/"
+git-repository-url = "https://github.com/lethang7794/aws-dev-associate"
+edit-url-template  = "https://github.com/lethang7794/aws-dev-associate/edit/master{path}"
 
 additional-js = [
   "theme/mermaid/mermaid.min.js",
